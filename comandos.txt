@@ -6,4 +6,8 @@ pip install --upgrade pip
 
 python manage.py startapp web
 
+
+python manage.py createsuperuser
+
+python manage.py makemigrations
 python manage.py migrate
