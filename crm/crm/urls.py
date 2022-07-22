@@ -14,15 +14,27 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
+# For images
+from django.conf import settings
+from django.conf.urls.static import static
 
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.contrib.auth.models import Group
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    #path('productos/', include('productos.urls')),
+    #path('admin/', admin.site.urls),
+    path('', admin.site.urls),
 ]
+
+#+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 admin.site.site_header = "CRM - Agroindustrial Pomalca"
 admin.site.site_title = "CRM - Agroindustrial Pomalca"

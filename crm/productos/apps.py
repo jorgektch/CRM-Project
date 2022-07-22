@@ -1,7 +1,6 @@
 from django.apps import AppConfig
 
 
-class WebConfig(AppConfig):
+class ProductosConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'web'
-    verbose_name = "Registros"
+    name = 'productos'
