@@ -1,25 +1,12 @@
+# Por única vez
+------------------------------------------
+cd nombre_carpeta
 python -m venv env
+pip install -r requirements.txt
+
+# Siempre que desees iniciar la aplicación
+------------------------------------------
 .\env\Scripts\activate
-
-pip install --upgrade pip
-pip install django
-
-
-django-admin startproject crm
-
-python manage.py startapp web
-python manage.py startapp productos
-python manage.py startapp empleados
-python manage.py startapp clientes
-
-python manage.py createsuperuser
-admin@agroindustrialpomalca.com.pe
-
-python manage.py makemigrations
-python manage.py migrate
-
 python manage.py runserver
 
-pip freeze > requirements.txt
-
-python manage.py collectstatic
+Abrir chrome en: localhost:8000
